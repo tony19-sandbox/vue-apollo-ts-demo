@@ -23,10 +23,7 @@ export default {
   setup () {
     const code = 'US'
     const { result, loading, error } = useQuery<CountryQuery>(GET_COUNTRY, { code })
-    const countryName = useResult(result, null, data => {
-      console.log('useResult', data)
-      return data.getCountry.name
-    })
+    const countryName = useResult(result, null, data => data.getCountry.name)
 
     watchEffect(() => console.log('country', {
       result: result.value,
