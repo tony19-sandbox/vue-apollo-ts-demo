@@ -1,0 +1,17 @@
+{
+  "name": "vue-apollo-ts",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently -k -n 'SERVER,CLIENT' -c 'blue,yellow' 'npm run start-server' 'npm run start-client'",
+    "start-server": "node server/index.js",
+    "start-client": "wait-on tcp:4000 && cd client && npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "wait-on": "^6.0.0"
+  }
+}
